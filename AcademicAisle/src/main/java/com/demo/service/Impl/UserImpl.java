@@ -50,7 +50,7 @@ public class UserImpl implements UserService {
 	public UserDto updateUser(UserDto userDto, Integer userId) {
 		User user = this.userRepo.findById(userId).orElseThrow(()-> new ResourceNotFoundException("User","id", userId));
 		
-		 Area area = areaRepo.findByAreaName(userDto.getArea().getArea());
+		 Area area = areaRepo.findByAreaName(userDto.getA);
 
 	        // If area not found, create and save a new area
 	        if (area == null) {

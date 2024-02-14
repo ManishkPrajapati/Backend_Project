@@ -1,9 +1,6 @@
 package com.demo.payload;
 
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-
 import com.demo.model.Area;
 
 import lombok.Getter;
@@ -19,19 +16,19 @@ public class UserDto {
 
 	    private Area area;
 
-	    @NotEmpty(message = "should be min 3 characters ")
+	    
 	    private String firstName;
 
-	    @NotEmpty (message = "should be min 3 characters ")
+	 
 	    private String lastName;
 
-	    @NotEmpty
+	   
 	    private String phone;
 
-	    @Email
+	
 	    private String email;
 
-	    @NotEmpty(message = "should be min 8 characters ")
+	   
 	    private String password;
 
 

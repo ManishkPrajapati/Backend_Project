@@ -2,6 +2,7 @@ package com.demo.model;
 
 
 import java.util.Date;
+import java.util.Optional;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -46,8 +49,9 @@ public class Advertisment {
 
     @Column(name = "Adv_title")
     private String advTitle;
-
-    @Column(name = "Post_date")
+    
+    @CreationTimestamp
+    @Column(name = "Post_date", nullable = false, updatable = false)
     private Date postDate;
 
     @Column(name = "Image")

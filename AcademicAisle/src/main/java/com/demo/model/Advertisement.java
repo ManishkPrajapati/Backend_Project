@@ -4,7 +4,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -12,10 +14,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
-import java.lang.Long;
+
 
 
 import lombok.Getter;
@@ -59,24 +60,25 @@ public class Advertisement {
 
     @Column(name = "Price")
     private double price;
+    
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,
-            mappedBy = "product")
-    private List<Image> images = new ArrayList<>();
+    @Column(name = "area_id")
+    private String area;
+    
+    @ElementCollection
+    @CollectionTable(name = "advertisement_image", joinColumns = @JoinColumn(name = "advertisement_id"))
+    @Column(name = "image")
+    private List<String> images = new ArrayList<>();
+    
+    
     @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
     @JoinColumn
     private User user;
-    private Long previewImageId;
     
     @PrePersist
     private void onCreate() { postDate = LocalDateTime.now(); }
     
-    public void addImageToProduct(Image image) {
-        image.setProduct(this);
-        images.add(image);
-    }
 
 	
     
 }
-

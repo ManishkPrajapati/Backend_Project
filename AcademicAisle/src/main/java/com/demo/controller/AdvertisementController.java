@@ -2,6 +2,7 @@ package com.demo.controller;
 
 import java.io.IOException;
 import java.security.Principal;
+import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,14 +27,12 @@ import lombok.RequiredArgsConstructor;
 public class AdvertisementController {
 	
 	private final AdvertisementImpl productService ;
-
-    @GetMapping("/")
-    public String products(@RequestParam(name = "searchWord", required = false) String title, Model model) {
-        model.addAttribute("products", productService.listProducts(title));
-//        model.addAttribute("user", productService.getUserByPrincipal(principal));
-        model.addAttribute("searchWord", title);
-        return "products";
-    }
+	
+	@GetMapping("/all/")
+	public List<Advertisement> getAllPost(){
+		return productService.getAllProducts();
+	}
+	
 
     @GetMapping("/product/{id}")
     public Advertisement productInfo(@PathVariable int id) throws IOException {

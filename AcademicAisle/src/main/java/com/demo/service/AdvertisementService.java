@@ -24,7 +24,9 @@ public interface AdvertisementService {
 	
 //	Advertisement getAddByCategory(String addCategory);
 	
-	List<Advertisement> listProducts(String title);
+//	List<Advertisement> listProducts(String title);
+	
+	List<Advertisement> getAllProducts();
 	
 	Advertisement getProductById(int id) throws IOException;
 	

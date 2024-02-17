@@ -17,5 +17,12 @@ public interface AdvertisementRepo extends JpaRepository<Advertisement, Integer>
 
 	@Query(value = "SELECT * FROM advertisement WHERE user_id = :userId", nativeQuery = true)
     List<Advertisement> getByUserId(Integer userId);
+
+	@Query(value = "SELECt * FROM advertisement WHERE category_id = :catId", nativeQuery = true)
+	List<Advertisement> getByCatId(Integer catId);
+
+	
+	@Query(value = "SELECT * FROM advertisement WHERE area = :areaName", nativeQuery = true)
+	List<Advertisement> getByArea(String areaName);
 	
 }

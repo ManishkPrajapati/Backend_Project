@@ -15,7 +15,6 @@ public interface AdvertisementService {
 	
 	void createAdd( Advertisement product, MultipartFile file1, MultipartFile file2, MultipartFile file3) throws IOException;
 	 
-	
 	List<AdvertisementDto> getAllProducts();
 	
 	AdvertisementDto getProductById(int id) throws IOException;
@@ -23,6 +22,9 @@ public interface AdvertisementService {
    void deleteProduct(int id) throws IOException;
    
    List<Advertisement> getProdByUserId(Integer userId);
+   
+   List<Advertisement> getProdByCatId(Integer catId);
 	
+   List<Advertisement> getProdByArea(String areaName);
 	
 }

@@ -90,8 +90,6 @@ public class AdvertisementImpl implements AdvertisementService{
 
 
 	public List<Advertisement> getProdByUserId(Integer userId) {
-	    
-
 	    // Get the list of advertisements associated with the user
 	    List<Advertisement> advertisements = addRepo.getByUserId(userId);
 
@@ -102,7 +100,17 @@ public class AdvertisementImpl implements AdvertisementService{
 
 	    return advertisements;
 	}
+
+
+	public List<Advertisement> getProdByCatId(Integer catId) {
+		List<Advertisement> advertisements = addRepo.getByCatId(catId);
+		return advertisements;
+	}
 	
+	public List<Advertisement> getProdByArea(String areaName){
+		List<Advertisement> advertisements = addRepo.getByArea(areaName);
+		return advertisements;
+	}
 	
 
 }

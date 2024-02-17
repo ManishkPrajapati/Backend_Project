@@ -62,7 +62,7 @@ public class Advertisement {
     private double price;
     
 
-    @Column(name = "area_id")
+    
     private String area;
     
     private String image1;

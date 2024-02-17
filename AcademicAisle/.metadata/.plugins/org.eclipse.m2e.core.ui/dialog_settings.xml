@@ -2,7 +2,6 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
-			<item value="E:\Academic-Aisle\Backend_Project\Backend_Project\AcademicAisle"/>
 			<item value="E:\Academic-Aisle\Backend_Project"/>
 		</list>
 		<list key="projectNameTemplate">

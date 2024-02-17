@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 import com.demo.model.Area;
 
 
-public interface AreaRepo extends JpaRepository<Area, Integer>{
+public interface AreaRepo extends JpaRepository<Area, Long>{
 
 	@Query(value = "SELECT a FROM Area a WHERE a.area = :areaName")
     Area findByAreaName(@Param("areaName") String areaName);

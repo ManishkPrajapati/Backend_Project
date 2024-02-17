@@ -18,13 +18,13 @@ import lombok.Setter;
 @Setter
 public class Category {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer categoryId;
+	
+	@Column(name="name",length = 100)
+	private String categoryTitle;
 
-    @Column(name = "C_Name")
-    private String name;
-
-    // Getters and setters
+    
 }
 

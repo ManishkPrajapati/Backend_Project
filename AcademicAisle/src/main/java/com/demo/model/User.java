@@ -53,14 +53,14 @@ public class User {
     @JoinColumn(name = "Area_id")
     private Area area;
     
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER,
-            mappedBy = "user")
-    private List<Advertisement> products = new ArrayList<>();
-
-    public void addProductToUser(Advertisement product) {
-        product.setUser(this);
-        products.add(product);
-    }
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER,
+//            mappedBy = "user")
+//    private List<Advertisement> products = new ArrayList<>();
+//
+//    public void addProductToUser(Advertisement product) {
+//        product.setUser(this);
+//        products.add(product);
+//    }
 
    
 }

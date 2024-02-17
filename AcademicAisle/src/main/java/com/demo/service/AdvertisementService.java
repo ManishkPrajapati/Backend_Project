@@ -9,28 +9,20 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.demo.model.Advertisement;
 import com.demo.model.User;
+import com.demo.payload.AdvertisementDto;
 
 public interface AdvertisementService {
 	
-	public void createAdd( Advertisement product, MultipartFile file1, MultipartFile file2, MultipartFile file3) throws IOException;
+	void createAdd( Advertisement product, MultipartFile file1, MultipartFile file2, MultipartFile file3) throws IOException;
 	 
-//	List<Advertisement> getAllAdd();
 	
-//	Advertisement updateAdd(Advertisement add, Integer addId);
-//	
-//	Advertisement deleteAdd(Integer addId);
+	List<AdvertisementDto> getAllProducts();
 	
-//	Advertisement getAddById(Integer addId);
+	AdvertisementDto getProductById(int id) throws IOException;
 	
-//	Advertisement getAddByCategory(String addCategory);
-	
-//	List<Advertisement> listProducts(String title);
-	
-	List<Advertisement> getAllProducts();
-	
-	Advertisement getProductById(int id) throws IOException;
-	
-//	void deleteProduct(int id);
+   void deleteProduct(int id) throws IOException;
+   
+   List<Advertisement> getProdByUserId(Integer userId);
 	
 	
 }

@@ -65,18 +65,26 @@ public class Advertisement {
     @Column(name = "area_id")
     private String area;
     
-    @ElementCollection
-    @CollectionTable(name = "advertisement_image", joinColumns = @JoinColumn(name = "advertisement_id"))
-    @Column(name = "image")
-    private List<String> images = new ArrayList<>();
+    private String image1;
+    
+    private String image2;
+    
+    private String image3;
     
     
-    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn
     private User user;
     
     @PrePersist
     private void onCreate() { postDate = LocalDateTime.now(); }
+
+	@Override
+	public String toString() {
+		return "Advertisement [id=" + id + ", category=" + category + ", title=" + title + ", postDate=" + postDate
+				+ ", pDescription=" + pDescription + ", pCondition=" + pCondition + ", price=" + price + ", area="
+				+ area + ", image1=" + image1 + ", image2=" + image2 + ", image3=" + image3 + ", user=" + user + "]";
+	}
     
 
 	
